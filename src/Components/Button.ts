@@ -10,10 +10,12 @@ interface ButtonType{
 
 export const Button = styled.button<ButtonType>`
     width: 100%;
+    height: 42px;
     padding: 6px 0;
     background-color: ${color.MainColor};
     color: ${color.White};
     border: none;
+    border-radius: 5px;
     &:hover{
         scale: 1.025;
         transition: all 0.3s;
