@@ -5,12 +5,16 @@ interface TxtProps {
     typography: keyof typeof FontStyle;
     children: ReactNode;
     color?: string;
+    onClick?: () => void;
+    cursor?: boolean;
 }
 
 export const Txt = ({
     typography,
     color,
     children,
+    onClick,
+    cursor,
     ...props
 }: TxtProps) => {
     return (
@@ -18,7 +22,9 @@ export const Txt = ({
             style={{
                 color: color,
                 ...(FontStyle[typography]),
+                cursor: cursor ? "pointer" : "default",
             }}
+            onClick={onClick}
             {...props}>
             {children}
         </p>
